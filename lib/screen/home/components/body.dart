@@ -65,7 +65,7 @@ class _BodyState extends State<Body> {
                   ),
                   itemBuilder: (context, index) {
                     return ItemCard(
-                      product: products[index],
+                      product: products[index],///////
                       press: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context){

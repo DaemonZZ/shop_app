@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app_example/bloc/session_bloc.dart';
+import 'package:shop_app_example/bloc/user_bloc.dart';
 import 'package:shop_app_example/models/session.dart';
 import 'package:shop_app_example/screen/welcome/welcome_screen.dart';
 
@@ -41,7 +42,8 @@ class _AppBodyState extends State<AppBody> {
     if (Session.user == 0) {
       return const WelcomeScreen();
     } else if (Session.user > 0) {
-      return Session.currentUser == null ? loading : const HomeScreen();
+      return Session.currentUser == null ? loading 
+          : Provider.value(value: UserBloc(),child: const HomeScreen(),);
     } else {
       return loading;
     }

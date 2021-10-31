@@ -13,7 +13,7 @@ class User with ChangeNotifier {
 
   User.fromJson(Map<String, dynamic> json) {
     userName = json['userName'];
-    password = json['password'];
+    password = "**********";
     name = json['name'];
     address = json['address'];
     phone = json['phone'];

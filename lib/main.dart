@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app_example/bloc/user_bloc.dart';
 import 'package:shop_app_example/constants.dart';
 import 'package:shop_app_example/models/session.dart';
 import 'package:shop_app_example/screen/app_body.dart';
-import 'package:shop_app_example/screen/home/home_screen.dart';
-import 'package:shop_app_example/screen/welcome/welcome_screen.dart';
 
 import 'bloc/session_bloc.dart';
 
@@ -24,7 +23,12 @@ class MyApp extends StatelessWidget {
       providers: [
         FutureProvider<SessionBloc>(create: (context){
           SessionBloc().getSession();
-        }, initialData: SessionBloc())
+        }, initialData: SessionBloc()),
+
+        FutureProvider<UserBloc>(create: (context){
+          SessionBloc().getSession();
+        }, initialData: UserBloc()),
+        ChangeNotifierProvider(create: (_)=>Session.currentUser),
       ],
       child: MaterialApp(
           title: 'Flutter Demo',

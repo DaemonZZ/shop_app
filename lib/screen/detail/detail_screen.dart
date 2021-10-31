@@ -7,8 +7,6 @@ class Detail extends StatelessWidget {
 
   const Detail(this._product, {Key? key}) : super(key: key);
 
-
-
   AppBar buildAppBar(BuildContext context) {
 
     return AppBar(
